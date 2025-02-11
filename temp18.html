@@ -3,7 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HDFC Bank</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+      }
+      h1 {
+        color: #004080;
+      }
+      #root {
+        background: white;
+        padding: 20px;
+        margin: 20px auto;
+        width: 300px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #004080;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #002050;
+      }
+      .error {
+        color: red;
+      }
+    </style>
     <script>
       let users = JSON.parse(localStorage.getItem("users")) || [];
       let useremail = "";
@@ -128,9 +166,9 @@
         let str = `
         <div>
             <h2>Login Form</h2>
-            <div id='msg'></div>
-            <p><input id="email" type="text"></p>
-            <p><input id="password" type="password"></p>
+            <div id='msg' class='error'></div>
+            <p><input id="email" type="text" placeholder="Email"></p>
+            <p><input id="password" type="password" placeholder="Password"></p>
             <button onclick='chkUser()'>Log In</button>
             <p><button onclick='showForm()'>Create Account</button></p>
         </div>
@@ -141,9 +179,7 @@
   </head>
   <body onload="showLogin()">
     <h1>HDFC Bank</h1>
-    <hr>
     <div id="root"></div>
-    <hr>
-    <h3>@Copyright 2025. All rights reserved.</h3>
+    <h3>&copy; 2025. All rights reserved.</h3>
   </body>
 </html>
