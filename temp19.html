@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function addcolor(){
+        let i=document.getElementById("txtcolor").value;
+        txtdiv.style.color=i;
+    }
+    function change(){
+        let type = document.getElementById("type").value;
+        if (type == "2") {
+          document.body.style.background="red";
+        } else {
+            document.body.style.background="blue";
+        }
+      }  
+    
+</script>
+</head>
+<body>
+    <p><input type="text" id="txtcolor" placeholder="enter color"</p>
+    <p><select id="type" onchange="change()">
+        <option value=0>--Select--</option>
+        <option value=1>Red</option>
+        <option value=2>Blue</option>
+        </select></p>
+    <button onclick="addcolor()">submit</button>
+    <div id="txtdiv">Hello world</div>
+</body>
+</html>
