@@ -53,6 +53,30 @@
             margin-left:5px;
             font-size:10px;
         }
+        .qMark {
+        background-color: green;
+        border-radius: 5px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 2px;
+      }
+      .radioClass {
+        border: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 3px;
+      }
+      #button{
+        border-radius: 5px;
+        width:200px;
+        border:none;
+        margin:5px;
+
+      }
             
     </style>
 </head>
@@ -79,27 +103,71 @@
 
         </div>
         <div class="row" style="justify-content:start">
-            <div class="leftCaption" >Date of Birth</div>
+            <div class="leftCaption" >Date of Birth<span class="qMark"
+                ><abbr title="Click for more information">?</abbr></span
+              ></div>
         </div>
         <div class="row">
             <select id="day"></select>
             <select id="month"></select>
             <select id="year"></select>
         </div>
-        <div class="row" style="justify-content:start">
-            <div class="leftCaption">Gender</div>
+        <div class="row" style="justify-content: start">
+            <div class="leftCaption">
+              Gender<span class="qMark"><abbr title="Click for more information">?</abbr></span
+              >
             </div>
-            <div class="row">
-            <input type="radio" id="gender" name="Male"/>Male<input type="radio" id="gender" name="Female"/>Female<input type="radio" id="gender" name="custom">custom
+          </div>
+          <div class="row">
+            <div class="radioClass">
+              <div><label> Female</label></div>
+              <div><input type="radio" name="gender" /></div>
+            </div>
+            <div class="radioClass">
+                <div><label> Male</label></div>
+                    <div><input type="radio" name="gender" /></div>
+            </div>
+            <div class="radioClass">
+                <div><label> Custom</label></div>
+                <div><input type="radio" name="gender" /></div>
+            </div>
+          </div>
+        <div class="row">
+            <input type="text" placeholder="mobile number">
         </div>
         <div class="row">
-            <input type="text" placeholder="mobilenumber">
+            <input type="password" placeholder="new password">
         </div>
         <div class="row">
-            
+            <button id="button"><center>Sign Up</center></button>
         </div>
+
+       
     
 </div>
+<script>
+    let str="";
+    for(let i=1;i<=31;i++)
+    {
+        str+=`<option>${i}</option>`;
+    }
+    day.innerHTML=str;
+
+    let str1="";
+    for(let i=1905;i<=2025;i++)
+    {
+        str1+=`<option>${i}</option>`;
+    }
+    year.innerHTML=str1;
+
+    let str2="";
+    for(let i=1;i<=12;i++)
+    {
+        str2+=`<option>${i}</option>`;
+    }
+    month.innerHTML=str2;
+
+</script>
 
 </body>
 </html>
